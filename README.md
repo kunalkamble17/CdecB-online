@@ -2,6 +2,3 @@
 
 ## For DevOps online batch
 ## New Source file
-
-
-Test commit
