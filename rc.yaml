@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ReplicaionController
+metadata:
+  name: my-rc
+spec:
+  replicas: 3
+  template:
+    metadata:
+      lables:
+        app: my-app
+    spec:
+      containers:
+        - name: my-pod-container
+          image: nginx
+          ports:
+            - name: http
+              containerPorts: 80
+              protocol: 80
+selector:
+  app: my-app
