@@ -16,5 +16,5 @@ spec:
             - name: http
               containerPort: 80
               protocol: TCP
-selector:
-  app: my-app
+  selector:
+    app: my-app
