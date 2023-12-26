@@ -1,16 +1,16 @@
 apiVersion: apps/v1
-kind: RepicaSet
+kind: ReplicaSet
 metadata:
-  name: my-rc
+  name: my-rs
 spec:
   replicas: 3
   template:
     metadata:
       labels:
-        app: my-app
+        app: cbz-app
     spec:
       containers:
-        - name: my-pod-container
+        - name: my-pod-container-1
           image: nginx
           ports:
             - name: http
