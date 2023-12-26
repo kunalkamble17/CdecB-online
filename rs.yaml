@@ -17,5 +17,8 @@ spec:
               containerPort: 80
               protocol: TCP
   selector:
-    matchExpressions:
-      - {key: app, operator: In, values: [ xyz-app, cbz-app]}
+    #matchExpressions:
+    #  - {key: app, operator: In, values: [ xyz-app, cbz-app]}
+    matchLabels:    #There are two matchLabels methods
+      - app: cbz-app
+      - app: xyz-app
