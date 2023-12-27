@@ -1,0 +1,22 @@
+apiVersion: apps/v1 
+kind: DaemonSet
+metadata: 
+  name: my-ds
+spec:
+  template:
+    metadata:
+      labels:
+        app: student-app
+    spec:
+      containers:
+        - name: my-app
+          image: nginx
+          ports:
+            - name: http
+              protocol: TCP
+              containerPort: 80
+  replicas: 
+  selector:
+    matchLabels:
+      app: student-app
+ 
