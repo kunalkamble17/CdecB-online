@@ -4,15 +4,16 @@ metadata:
   name: my-pod-1
 spec:
   containers:
-    - image: nginx
+    - name : my-pod
+      image: nginx
       env:
         - name: MYSQL_USER
-          valuesFrom:
+          valueFrom:
             configMapKeyRef:
               name: my-vars
               key: DB_USER
         - name: MYSQL_PASSWORD
-          valuesFrom:
+          valueFrom:
             secretKeyRef:
               name: my-sec
               key: DB_PASSWORD
