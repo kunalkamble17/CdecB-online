@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: my-sts
+Spec:
+  template:
+    metadata:
+      lables:
+        app: mariadb
+    spec:
+      containers:
+        - name: my-mariadb-container
+          image: mysql
+          ports:
+            - name: mysql
+              protocol: TCP
+              containerPort: 3306
+  selector:
+    matachLabels:
+      app: mariadb
+  replicas: 3
