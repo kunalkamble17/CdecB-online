@@ -2,10 +2,10 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: my-sts
-Spec:
+spec:
   template:
     metadata:
-      lables:
+      labels:
         app: mariadb
     spec:
       containers:
@@ -15,7 +15,10 @@ Spec:
             - name: mysql
               protocol: TCP
               containerPort: 3306
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: "REDHAT"
   selector:
-    matachLabels:
+    matchLabels:
       app: mariadb
   replicas: 3
