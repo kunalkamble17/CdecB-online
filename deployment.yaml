@@ -26,6 +26,12 @@ spec:
                 configMapKeyRef:
                   name: my-vars
                   key: DB_USER
+              #Secret FIle
+              #- name: MYSQL_USER_NAME
+              #valueFrom:
+               # secretKeyRef:
+                #  name: my-sec
+                 # key: DB_USER
   replicas: 4
   selector:
     matchLabels:
