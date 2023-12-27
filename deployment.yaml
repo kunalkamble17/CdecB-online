@@ -15,6 +15,17 @@ spec:
             - name: http
               protocol: TCP
               containerPort: 80
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                configMapKeyRef:
+                  name: my-vars
+                  key: DB_PASSWORD
+            - name: MYSQL_USER_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: my-vars
+                  key: DB_USER
   replicas: 4
   selector:
     matchLabels:

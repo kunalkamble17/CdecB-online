@@ -17,7 +17,17 @@ spec:
               containerPort: 3306
           env:
             - name: MYSQL_ROOT_PASSWORD
-              value: "REDHAT"
+              valueFrom:
+                configMapKeyRef:
+                  name: my-vars
+                  key: DB_PASSWORD
+            - name: MYSQL_USER_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: my-vars
+                  key: DB_USER
+            #- name: MYSQL_ROOT_PASSWORD
+             # value: "REDHAT"
   selector:
     matchLabels:
       app: mariadb
