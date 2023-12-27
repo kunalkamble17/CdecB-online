@@ -1,6 +1,6 @@
-apiVersion: apps/v1 
+apiVersion: apps/v1
 kind: DaemonSet
-metadata: 
+metadata:
   name: my-ds
 spec:
   template:
@@ -15,8 +15,6 @@ spec:
             - name: http
               protocol: TCP
               containerPort: 80
-  replicas: 
   selector:
     matchLabels:
       app: student-app
- 
