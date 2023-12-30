@@ -9,5 +9,5 @@ spec:
   ports:
     - protocol: TCP
       name: http
-      port: 80      #clusterIp Port 
-      targetPort: 80  #container Port
+      port: 8080     #clusterIp Port 
+      targetPort: 8080  #container Port
