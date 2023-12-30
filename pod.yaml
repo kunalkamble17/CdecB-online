@@ -27,4 +27,8 @@ spec:
     -name: my-http
      protocol: TCP
      containerPort: 80
+
+    -name: my-http
+     protocol: TCP
+     containerPort: 80
 ...

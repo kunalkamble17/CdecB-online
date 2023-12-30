@@ -1,0 +1,23 @@
+apiVersion: apps/v1 
+kind: Deployment 
+metadata: 
+  name: frontend-app
+spec:
+  template:
+    metadata:
+      labels:
+        app: frontend-app
+    spec:
+      containers:
+        - name: frontend-app-con
+          image: kunalkamble17/frontend-app:latest
+          ports:
+            - name: http
+              protocol: TCP
+              containerPort: 80
+  replicas: 2
+  selector:
+    matchLabels:
+      app: frontend-app
+  strategy:
+    type: RollingUpdate

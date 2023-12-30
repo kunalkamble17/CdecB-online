@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-service
+spec:
+  type: LoadBalncer
+  selector:
+    app: frontend-app
+  ports:
+    - protocol: TCP
+      name: http
+      port: 80      #clusterIp Port 
+      targetPort: 80  #container Port

@@ -1,0 +1,23 @@
+apiVersion: apps/v1 
+kind: Deployment 
+metadata: 
+  name: backend-app
+spec:
+  template:
+    metadata:
+      labels:
+        app: backend-app
+    spec:
+      containers:
+        - name: backend-app-con
+          image: kunalkamble17/backend-app:latest
+          ports:
+            - name: java
+              protocol: TCP
+              containerPort: 8080
+  replicas: 2
+  selector:
+    matchLabels:
+      app: backend-app
+  strategy:
+    type: RollingUpdate
