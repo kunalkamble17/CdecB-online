@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cbz-app
+  labels:
+    name: cbz-app
+spec:
+  volumes:
+    - name: my-vol
+      persistentVolumeClaim:
+        claimName: cbz-pvc
+  containers:
+   - name: cbz-app
+     image: nginx
+     ports:
+       - containerPort: 80
+     volumeMounts:
+       - mountPath: /var/www/html
+         name: my-vol
