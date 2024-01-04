@@ -1,0 +1,21 @@
+apiVersion: apps/v1 
+kind: Deployment 
+metadata: 
+  name: cbz-app-home
+spec:
+  selector:
+    matchLabels:
+      app: cbz-app-home
+  template:
+    metadata:
+      labels:
+        app: cbz-app-home
+    spec:
+      containers:
+        - name: cbz-app-home
+          image: httpd
+          ports:
+            - name: http
+              protocol: TCP
+              containerPort: 80
+        
