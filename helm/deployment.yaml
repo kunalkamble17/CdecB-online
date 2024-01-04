@@ -1,20 +1,20 @@
 apiVersion: apps/v1 
 kind: Deployment 
 metadata: 
-  name: cbz-app-home
+  name: {{ .Values.app.name }}     #cbz-app-home
 spec:
   selector:
     matchLabels:
-      app: cbz-app-home
+      app: {{ .Values.app.name }}     #cbz-app-home
   template:
     metadata:
       labels:
-        app: cbz-app-home
+        app: {{ .Values.app.name }}  #cbz-app-home
     spec:
       containers:
-        - name: cbz-app-home
-          image: httpd
+        - name: {{ .Values.app.name }}   #cbz-app-home
+          image: {{ .Values.iamge}}   #httpd
           ports:
             - name: http
               protocol: TCP
-              containerPort: 80
+              containerPort: {{ .Values.port}}   #80
