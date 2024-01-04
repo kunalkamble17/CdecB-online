@@ -1,0 +1,8 @@
+image: nginx
+port: 80
+app:
+  name: cbz-home-app
+  host_name: cbz.com
+  labels_name: cbz-app-ingress
+spec:
+  type: LoadBalancer
